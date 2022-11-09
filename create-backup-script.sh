@@ -4,6 +4,10 @@
 #
 #  This script allow you to create a dump file for glpi. You must run this script on the glpi server.
 
+#### REQUIREMENTS ####
+#
+# - mysqldump
+
 #### VARIABLE ####
 
 source .env
@@ -24,4 +28,4 @@ mkdir /tmp/$DATE/
 
 cp -r $GLPI_DIR /tmp/$DATE/
 
-mysqldump -u$DB_USER -p$DB_PASSWD -h localhost $DB > /tmp/$DATE/$DB.sql
+mysqldump -u$DB_USER -p$DB_PASSWD -h localhost --database $DB > /tmp/$DATE/$DB.sql
