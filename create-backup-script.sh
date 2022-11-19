@@ -33,7 +33,7 @@ mkdir -p /tmp/$DATE/glpi
 
 cp -r $GLPI_DIR* /tmp/$DATE/glpi
 
-mysqldump -h 127.0.0.1 -u $DB_USER -p$DB_PASSWD --add-drop-database --hex-blob --dump-date --verbose --routines --triggers --events --quick --skip-lock-tables --column-statistics=0 $DB > /tmp/$DATE/$DB.sql
+mysqldump -h 127.0.0.1 -u $DB_USER -p$DB_PASSWD --add-drop-database --hex-blob --dump-date --verbose --routines --triggers --events --quick --skip-lock-tables $DB > /tmp/$DATE/$DB.sql
 
 #### IMPORT SQL BACKUP ####
 #
