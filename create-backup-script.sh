@@ -57,3 +57,5 @@ mysqldump -h 127.0.0.1 -u $DB_USER -p$DB_PASSWD --add-drop-database --hex-blob -
 # chown -R www-data:www-data /var/www/html/glpi/
 #
 ####
+
+#### RUN THIS CRONTAB AS ROOT ####
