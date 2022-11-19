@@ -24,10 +24,13 @@ source .env
 #
 ####
 
+OLD=$(date +"%Y-%m-%d" -d "1 day ago")
 DATE=$(date +"%Y-%m-%d")
 GLPI_DIR="/var/www/html/glpi/"
 
 #### SCRIPT ####
+
+rm -rf /tmp/$OLD/
 
 mkdir -p /tmp/$DATE/glpi
 
