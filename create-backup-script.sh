@@ -14,7 +14,7 @@
 
 #### VARIABLE ####
 
-source .env
+source /home/thomas/backup-glpi/.env
 
 #### TEMPLATE FOR ENV FILE ####
 #
