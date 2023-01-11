@@ -14,7 +14,7 @@
 
 #### VARIABLE ####
 
-source /home/thomas/backup-glpi/.env
+source /home/debian/backup-glpi/.env
 
 #### TEMPLATE FOR ENV FILE ####
 #
@@ -26,15 +26,12 @@ source /home/thomas/backup-glpi/.env
 
 OLD=$(date +"%Y-%m-%d" -d "1 day ago")
 DATE=$(date +"%Y-%m-%d")
-GLPI_DIR="/var/www/html/glpi/"
 
 #### SCRIPT ####
 
 rm -rf /tmp/$OLD/
 
-mkdir -p /tmp/$DATE/glpi
-
-cp -r $GLPI_DIR* /tmp/$DATE/glpi
+mkdir -p /tmp/$DATE/
 
 mysqldump -h 127.0.0.1 -u $DB_USER -p$DB_PASSWD --add-drop-database --hex-blob --dump-date --verbose --routines --triggers --events --quick --skip-lock-tables $DB > /tmp/$DATE/$DB.sql
 
